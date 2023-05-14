@@ -1,12 +1,12 @@
 import React, { Component } from "react";
-import List from "./List";
+import Layout from "./Layout";
 
-export default class ManageCategories extends Component {
+export default class AdvertismentManagement extends Component {
   render() {
     return (
       <div className="row">
         <div className="col-12">
-          <List></List>
+          <Layout></Layout>
         </div>
       </div>
     );

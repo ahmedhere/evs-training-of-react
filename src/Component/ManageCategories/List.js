@@ -20,21 +20,21 @@ export default class List extends Component {
   handleAdd() {
     let name = document.getElementById("name").value;
     let parent = document.getElementById("parent").value;
-    let id = this.state._categories.length + 1;
+    // let id = this._categories.length + 1;
 
     let c = {
-      id,
+      // id,
       name,
       parent,
     };
-    this.setState({ _categories: [...this.state._categories, c] });
+    console.log(c);
   }
   render() {
     return (
       <div className="container-fluid">
         <div className="row p-3 bg-primary text-light">
           <div className="col-12 d-flex justify-content-center">
-            <h3 className="flex-grow-1">Manage Categories</h3>
+            <h3 className="flex-grow-1 capital">Manage Categories</h3>
             <button
               className="btn btn-light"
               data-bs-toggle="modal"
@@ -44,16 +44,16 @@ export default class List extends Component {
             </button>
           </div>
         </div>
-        <div className="row bg-light p-3">
+        <div className="row bg-light p-2">
           <div className="col-12">
             <div className="row m-2">
-              <div className="col-2">
+              <div className="col-md-2 col-12">
                 <h6>Name</h6>
               </div>
               <div className="col">
                 <h6>Parent</h6>
               </div>
-              <div className="col-2">
+              <div className="col-md-2 col-12">
                 <h6>Action</h6>
               </div>
             </div>

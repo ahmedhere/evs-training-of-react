@@ -6,13 +6,13 @@ export default class ListRow extends Component {
       <div className="row mt-3">
         <div className="col-12">
           <div className="row">
-            <div className="col-2">
+            <div className="col-md-2 col-12">
               {this.props.name ? this.props.name : "none"}
             </div>
             <div className="col">
               {this.props.parent ? this.props.parent : "none"}
             </div>
-            <div className="col-2">
+            <div className="col-md-2 col-12">
               <button className="btn btn-warning mx-2">Edit</button>
               <button className="btn btn-danger mx-2">Delete</button>
             </div>
