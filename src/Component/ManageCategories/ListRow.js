@@ -13,7 +13,8 @@ export default class ListRow extends Component {
               {this.props.parent ? this.props.parent : "none"}
             </div>
             <div className="col-2">
-              <button className="btn btn-warning">Edit</button>
+              <button className="btn btn-warning mx-2">Edit</button>
+              <button className="btn btn-danger mx-2">Delete</button>
             </div>
           </div>
         </div>

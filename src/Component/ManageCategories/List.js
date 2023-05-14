@@ -4,7 +4,9 @@ import ListRow from "./ListRow";
 export default class List extends Component {
   constructor(props) {
     super(props);
-    this._categories = [
+  }
+  state = {
+    _categories: [
       { id: 1, name: "Mobile" },
       { id: 2, name: "Iphone", parent: "Mobile" },
       { id: 3, name: "Samsung", parent: "Mobile" },
@@ -13,7 +15,19 @@ export default class List extends Component {
       { id: 6, name: "DELL", parent: "Laptop" },
       { id: 7, name: "Apple", parent: "Laptop" },
       { id: 8, name: "Lenovo", parent: "Laptop" },
-    ];
+    ],
+  };
+  handleAdd() {
+    let name = document.getElementById("name").value;
+    let parent = document.getElementById("parent").value;
+    let id = this.state._categories.length + 1;
+
+    let c = {
+      id,
+      name,
+      parent,
+    };
+    this.setState({ _categories: [...this.state._categories, c] });
   }
   render() {
     return (
@@ -45,7 +59,7 @@ export default class List extends Component {
             </div>
             <div className="row">
               <div className="col-12">
-                {this._categories.map((c) => (
+                {this.state._categories.map((c) => (
                   <ListRow {...c} key={c.id} />
                 ))}
               </div>
@@ -100,6 +114,19 @@ export default class List extends Component {
                       />
                     </div>
                   </div>
+                  <div className="row">
+                    <div className="col-12">
+                      <label htmlFor="name">
+                        Enter the parent of the product
+                      </label>
+                      <input
+                        type="text"
+                        name="parent"
+                        id="parent"
+                        className="form-control"
+                      />
+                    </div>
+                  </div>
                 </form>
               </div>
               <div className="modal-footer">
@@ -110,7 +137,11 @@ export default class List extends Component {
                 >
                   Close
                 </button>
-                <button type="button" className="btn btn-primary">
+                <button
+                  type="button"
+                  onClick={this.handleAdd}
+                  className="btn btn-primary"
+                >
                   Save
                 </button>
               </div>
