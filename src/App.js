@@ -1,9 +1,9 @@
 import "./App.css";
-
+import ManageCategories from "./Component/ManageCategories";
 function App() {
   return (
     <div className="App">
-      <h1 className="bg-danger">Hello Bro! I am going to start my design</h1>
+      <ManageCategories />
     </div>
   );
 }
