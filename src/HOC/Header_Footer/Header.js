@@ -6,9 +6,9 @@ export class Header extends Component {
     return (
       <nav className="navbar navbar-expand-md navbar-light bg-light">
         <div className="container-fluid">
-          <a className="navbar-brand" href="/">
+          <Link className="navbar-brand" href="/">
             Project Routing
-          </a>
+          </Link>
           <button
             className="navbar-toggler d-lg-none"
             type="button"
