@@ -2,9 +2,6 @@ import React, { Component } from "react";
 import ListRow from "./ListRow";
 
 export default class List extends Component {
-  constructor(props) {
-    super(props);
-  }
   state = {
     _categories: [
       { id: 1, name: "Mobile" },

@@ -31,7 +31,9 @@ export default class Layout extends Component {
       <div className="container-fluid">
         <div className="row">
           <div className="col-12 d-flex bg-primary text-light justify-content-center p-3">
-            <h2 className="flex-grow-1 capital">Advertisment Management</h2>
+            <h3 className="flex-grow-1 capital" style={{ textAlign: "left" }}>
+              Advertisement Management
+            </h3>
             <button className="btn btn-light mx-2">Approve/Reject</button>
           </div>
         </div>

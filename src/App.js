@@ -1,12 +1,18 @@
 import "./App.css";
 import ManageCategories from "./Component/ManageCategories";
 import AdvertismentManagement from "./Component/Advertisement";
+import Layout from "./HOC/Header_Footer";
+import { Route, Routes } from "react-router-dom";
 function App() {
   return (
-    <div className="App">
-      <ManageCategories />
-      <AdvertismentManagement />
-    </div>
+    <Layout>
+      <Routes>
+        <Route element={<ManageCategories />} path="/manageCategories" />
+        <Route element={<AdvertismentManagement />} path="/" />
+      </Routes>
+      {/* <ManageCategories /> */}
+      {/* <AdvertismentManagement /> */}
+    </Layout>
   );
 }
 
