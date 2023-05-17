@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 export class Header extends Component {
   render() {
     return (
-      <nav className="navbar navbar-expand-md navbar-light bg-light">
+      <nav className="navbar navbar-expand-md navbar-dark bg-dark">
         <div className="container-fluid">
           <Link className="navbar-brand" href="/">
             Project Routing
