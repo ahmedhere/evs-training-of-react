@@ -2,8 +2,12 @@ import React, { Component } from "react";
 import ListRow from "./ListRow";
 
 export default class List extends Component {
+  constructor(props) {
+    super(props);
+    this.handleAdd = this.handleAdd.bind(this);
+  }
   state = {
-    _categories: [
+    categories: [
       { id: 1, name: "Mobile" },
       { id: 2, name: "Iphone", parent: "Mobile" },
       { id: 3, name: "Samsung", parent: "Mobile" },
@@ -14,17 +18,21 @@ export default class List extends Component {
       { id: 8, name: "Lenovo", parent: "Laptop" },
     ],
   };
-  handleAdd() {
+  handleAdd(e) {
+    e.preventDefault();
     let name = document.getElementById("name").value;
     let parent = document.getElementById("parent").value;
-    // let id = this._categories.length + 1;
+    let id = document.getElementById("id").value;
 
     let c = {
-      // id,
+      id,
       name,
       parent,
     };
     console.log(c);
+    this.setState({
+      categories: [...this.state.categories, c],
+    });
   }
   render() {
     return (
@@ -56,7 +64,7 @@ export default class List extends Component {
             </div>
             <div className="row">
               <div className="col-12">
-                {this.state._categories.map((c) => (
+                {this.state.categories.map((c) => (
                   <ListRow {...c} key={c.id} />
                 ))}
               </div>
@@ -100,6 +108,17 @@ export default class List extends Component {
                 <form action="#">
                   <div className="row">
                     <div className="col-12">
+                      <label htmlFor="name">Id</label>
+                      <input
+                        type="number"
+                        name="id"
+                        id="id"
+                        className="form-control"
+                      />
+                    </div>
+                  </div>
+                  <div className="row">
+                    <div className="col-12">
                       <label htmlFor="name">
                         Enter the name of the product
                       </label>
@@ -124,24 +143,17 @@ export default class List extends Component {
                       />
                     </div>
                   </div>
+                  <button
+                    type="Submit"
+                    onClick={(e) => this.handleAdd(e)}
+                    className="btn btn-primary"
+                    data-bs-dismiss="modal"
+                  >
+                    Save
+                  </button>
                 </form>
               </div>
-              <div className="modal-footer">
-                <button
-                  type="button"
-                  className="btn btn-secondary"
-                  data-bs-dismiss="modal"
-                >
-                  Close
-                </button>
-                <button
-                  type="button"
-                  onClick={this.handleAdd}
-                  className="btn btn-primary"
-                >
-                  Save
-                </button>
-              </div>
+              <div className="modal-footer"></div>
             </div>
           </div>
         </div>
