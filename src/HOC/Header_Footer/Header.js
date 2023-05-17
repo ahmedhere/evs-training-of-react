@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import { Link } from "react-router-dom";
 
 export class Header extends Component {
   render() {
@@ -22,34 +23,14 @@ export class Header extends Component {
           <div className="collapse navbar-collapse" id="collapsibleNavId">
             <ul className="navbar-nav me-auto mt-2 mt-lg-0">
               <li className="nav-item">
-                <a className="nav-link active" href="/" aria-current="page">
+                <Link className="nav-link active" to="/" aria-current="page">
                   Home <span className="visually-hidden">(current)</span>
-                </a>
+                </Link>
               </li>
               <li className="nav-item">
-                <a className="nav-link" href="/">
-                  Link
-                </a>
-              </li>
-              <li className="nav-item dropdown">
-                <a
-                  className="nav-link dropdown-toggle"
-                  href="/"
-                  id="dropdownId"
-                  data-bs-toggle="dropdown"
-                  aria-haspopup="true"
-                  aria-expanded="false"
-                >
-                  Dropdown
-                </a>
-                <div className="dropdown-menu" aria-labelledby="dropdownId">
-                  <a className="dropdown-item" href="/manageCategories">
-                    Action 1
-                  </a>
-                  <a className="dropdown-item" href="/">
-                    Action 2
-                  </a>
-                </div>
+                <Link to="/manageCategories" className="nav-link">
+                  <span>Manage Categories</span>
+                </Link>
               </li>
             </ul>
             <form className="d-flex my-2 my-lg-0">
