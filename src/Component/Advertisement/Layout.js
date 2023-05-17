@@ -28,7 +28,7 @@ export default class Layout extends Component {
   }
   render() {
     return (
-      <div className="container-fluid">
+      <div className="container-fluid mt-2">
         <div className="row">
           <div className="col-12 d-flex bg-primary text-light justify-content-center p-3">
             <h3 className="flex-grow-1 capital" style={{ textAlign: "left" }}>

@@ -3,7 +3,7 @@ import React, { Component } from "react";
 export default class ListRow extends Component {
   render() {
     return (
-      <div className="row mt-3">
+      <div className="row p-3">
         <div className="col-12">
           <div className="row">
             <div className="col-md-2 col-12">

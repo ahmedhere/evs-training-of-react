@@ -36,8 +36,8 @@ export default class List extends Component {
   }
   render() {
     return (
-      <div className="container-fluid">
-        <div className="row p-3 bg-primary text-light">
+      <div className="container-fluid mt-2">
+        <div className="row p-3 bg-dark text-light">
           <div className="col-12 d-flex justify-content-center">
             <h3 className="flex-grow-1 capital">Manage Categories</h3>
             <button
